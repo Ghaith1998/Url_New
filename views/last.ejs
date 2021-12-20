@@ -9,13 +9,20 @@
 </head>
 <body>
     <div class="container">
-    <h2>Wellcome to the Main Page</h2>
-    <form action="/shortUrl" method="post" class="my-4 form-inline" >
-        <h3>Enter the Url Link </h3>
-        <input type="url" name="fullUrl" id="fullUrl" placeholder="URL" class="form-control col mr-1">
-        <button type="submit" class="btn btn-success my-2 ">Shrink</button>
-    </form>
-    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Full Url</th>
+                <th>Short Url</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="fl"><a href=""></a></td>
+                <td id="sh"><a href=""></a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
