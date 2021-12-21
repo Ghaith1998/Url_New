@@ -16,12 +16,17 @@ app.get("/", (req,res) => {
     console.log("User is Online")
 })
 
-app.get("/shortUrl", (req,res) => {
+app.get("/shortUrl", (req,res) => {              // Das geht nur mit dem ersten URL
     for (let i = 0; i <= Urlz.length; i++){
         res.redirect(Urlz[i].urlFull)
     }
 })
 
+// app.get("/shortUrl", (req,res) => {              // Da sollen alle URLs gezeigt werden
+//     for (let i = 0; i <= Urlz.length; i++){
+//         res.send(Urlz)
+//     }
+// })
 
 app.post("/shortUrl", (req,res) => {
     const newUrlz = {
@@ -30,6 +35,6 @@ app.post("/shortUrl", (req,res) => {
         urlShort : "Ftta131c"
     }
     Urlz.push(newUrlz)
-    res.render("last",{newUrlz})
+    res.render("last",{newUrlz})        // mehrere URLs müssen ausgeprintet werden 
 })
 
