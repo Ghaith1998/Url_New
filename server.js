@@ -16,6 +16,13 @@ app.get("/", (req,res) => {
     console.log("User is Online")
 })
 
+app.get("/shortUrl", (req,res) => {
+    for (let i = 0; i <= Urlz.length; i++){
+        res.redirect(Urlz[i].urlFull)
+    }
+})
+
+
 app.post("/shortUrl", (req,res) => {
     const newUrlz = {
         urlID : Urlz.length + 1,
@@ -23,22 +30,6 @@ app.post("/shortUrl", (req,res) => {
         urlShort : "Ftta131c"
     }
     Urlz.push(newUrlz)
-    res.send(`
-    <table>
-    <thead>
-        <tr>
-            <th>Full Url</th>
-            <th>Short Url</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td id="fl"><a href="${newUrlz.urlFull}">${newUrlz.urlFull}</a></td>
-    <td id="sh"><a href="${newUrlz.urlFull}">${newUrlz.urlShort}</a></td>
-</tr>
-    </tbody>
-</table>
-    `)
-
+    res.render("last",{newUrlz})
 })
 
