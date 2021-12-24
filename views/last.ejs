@@ -17,10 +17,12 @@
             </tr>
         </thead>
         <tbody id="urlBox">
-            <tr>
-                <td><a href="<%`${newUrlz.urlFull}`%>"><%= newUrlz.urlFull%></a></td>
-                <td><a href="<%`${newUrlz.urlFull}`%>"><%= newUrlz.urlShort%> </a></td>
-            </tr>
+                <% Urlz.forEach(us => { %>
+                    <tr>
+                        <td> <%=us.urlFull%> </td>
+                        <td> <%=`localhost:5000/shortUrl${us.urlShort}`%></td> 
+                        <% }) %>
+                    </tr>
         </tbody>
     </table>
 </div>
